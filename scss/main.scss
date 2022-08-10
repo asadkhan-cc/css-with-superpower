@@ -1,0 +1,65 @@
+// SCSS Variable
+$global-bg-dark: rgb(51, 54, 50);
+$global-bg-light: rgb(194, 214, 188);
+$font-weight: (
+  "reg": 200,
+  "med": 400,
+  "bold": 700,
+);
+//SCSS Mapping
+$bg: (
+  "primary": rgb(104, 106, 204),
+  "secondary": rgb(104, 230, 136),
+  "danger": rgb(226, 78, 59),
+  "dark": rgb(54, 58, 53),
+  "light": rgb(194, 214, 188),
+);
+// basic sass
+body {
+  font-weight: map-get($font-weight, bold);
+  background: $global-bg-dark;
+}
+
+//SCSS NESTING
+p {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  background: map-get($bg, dark);
+  // background: red !important;
+  color: map-get($bg, light);
+  a {
+    letter-spacing: 0rem;
+    color: aqua;
+  }
+  a:link {
+    color: aqua;
+  }
+
+  a:visited {
+    color: green;
+  }
+
+  a:hover {
+    color: blue;
+  }
+
+  a:active {
+    color: blue;
+  }
+}
+
+.container {
+  width: 80%;
+  height: auto;
+  background-color: map-get($bg, secondary) !important;
+//   CHILD CLASSES CREATION WHICH INHERIT FROM BASE CLASS
+  #{&}-para {
+    background-color: #fff;
+    border: 2px solid red;
+  }
+  &:hover{
+    // background-color: #fff;
+    background-color: map-get($bg, secondary) !important;
+
+  }
+}

@@ -1,0 +1,40 @@
+body {
+  font-weight: 700;
+  background: rgb(51, 54, 50);
+}
+
+p {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  background: rgb(54, 58, 53);
+  color: rgb(194, 214, 188);
+}
+p a {
+  letter-spacing: 0rem;
+  color: aqua;
+}
+p a:link {
+  color: aqua;
+}
+p a:visited {
+  color: green;
+}
+p a:hover {
+  color: blue;
+}
+p a:active {
+  color: blue;
+}
+
+.container {
+  width: 80%;
+  height: auto;
+  background-color: rgb(104, 230, 136) !important;
+}
+.container .container-para {
+  background-color: #fff;
+  border: 2px solid red;
+}
+.container:hover {
+  background-color: rgb(104, 230, 136) !important;
+}/*# sourceMappingURL=main.css.map */
