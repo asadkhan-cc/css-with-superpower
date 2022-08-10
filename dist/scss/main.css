@@ -29,12 +29,16 @@ p a:active {
 .container {
   width: 80%;
   height: auto;
-  background-color: rgb(104, 230, 136) !important;
+  background-color: rgb(104, 230, 136);
 }
-.container .container-para {
+.container .container_para {
   background-color: #fff;
   border: 2px solid red;
+  text-transform: capitalize;
 }
-.container:hover {
-  background-color: rgb(104, 230, 136) !important;
+.container .container_para:hover {
+  background: rgb(104, 230, 136) !important;
+  border: 2px solid red;
+  padding: 200px;
+  font-size: 3rem;
 }/*# sourceMappingURL=main.css.map */

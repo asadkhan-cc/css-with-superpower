@@ -51,15 +51,21 @@ p {
 .container {
   width: 80%;
   height: auto;
-  background-color: map-get($bg, secondary) !important;
-//   CHILD CLASSES CREATION WHICH INHERIT FROM BASE CLASS
-  #{&}-para {
+  background-color: map-get($bg, secondary) ;
+  //   CHILD CLASSES CREATION WHICH INHERIT FROM BASE CLASS #{&}
+  #{&}_para {
     background-color: #fff;
     border: 2px solid red;
-  }
-  &:hover{
-    // background-color: #fff;
-    background-color: map-get($bg, secondary) !important;
+    text-transform: capitalize;
+  //   CHILD CLASSES CREATION using &
 
+    &:hover {
+      // background-color: #fff;
+      background: map-get($bg, secondary) !important;
+      border: 2px solid red ;
+      padding: 200px;
+      font-size: 3rem;
+
+    }
   }
 }
