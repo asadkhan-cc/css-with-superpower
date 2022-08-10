@@ -1,11 +1,11 @@
+// SCSS partials
+@import "./resets";
+@import "./variables";
+
 // SCSS Variable
 $global-bg-dark: rgb(51, 54, 50);
 $global-bg-light: rgb(194, 214, 188);
-$font-weight: (
-  "reg": 200,
-  "med": 400,
-  "bold": 700,
-);
+
 //SCSS Mapping
 $bg: (
   "primary": rgb(104, 106, 204),
@@ -14,17 +14,30 @@ $bg: (
   "dark": rgb(54, 58, 53),
   "light": rgb(194, 214, 188),
 );
+
+//SCSS functions
+$font-weight: (
+  "reg": 200,
+  "med": 400,
+  "bold": 700,
+);
+
+@function getweight($weig) {
+  @return map-get($font-weight, $weig);
+}
 // basic sass
 body {
-  font-weight: map-get($font-weight, bold);
-  background: $global-bg-dark;
+  //  css function  getweight(reg) used below
+
+  font-weight: getweight(reg);
+  background: $global-bg-light;
 }
 
 //SCSS NESTING
 p {
   font-size: 1rem;
   letter-spacing: 0.1rem;
-  background: map-get($bg, dark);
+  background: map-get($bg, danger);
   // background: red !important;
   color: map-get($bg, light);
   a {
@@ -48,24 +61,73 @@ p {
   }
 }
 
+//SCSS MIXINS
+@mixin flex($direction: row) {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
 .container {
+  @include flex();
   width: 80%;
   height: auto;
-  background-color: map-get($bg, secondary) ;
+  background-color: none;
   //   CHILD CLASSES CREATION WHICH INHERIT FROM BASE CLASS #{&}
   #{&}_para {
     background-color: #fff;
     border: 2px solid red;
     text-transform: capitalize;
-  //   CHILD CLASSES CREATION using &
+    //   CHILD CLASSES CREATION using &
 
     &:hover {
       // background-color: #fff;
       background: map-get($bg, secondary) !important;
-      border: 2px solid red ;
+      border: 2px solid red;
       padding: 200px;
       font-size: 3rem;
-
     }
   }
+}
+@function gettheme($theme) {
+  @return map-get($bg, $theme);
+}
+@mixin border-rad($rad) {
+  border: 2px solid map-get($bg, danger);
+  border-radius: $rad;
+  @if $rad<=10 {
+    width:$rad * 10% ;
+    border-radius: $rad;
+    background-color: gettheme(primary);
+  } @else if $rad <=20 {
+    width:$rad * 5% ;
+
+    border-radius: $rad;
+    background-color: gettheme(secondary);
+  } @else if $rad <=50 {
+    width:$rad * 2% ;
+    border-radius: $rad;
+    background-color: gettheme(danger);
+  } @else if $rad <=60 {
+    width:$rad * 1.2% ;
+    border-radius: $rad;
+    background-color: gettheme(light);
+  }
+}
+
+.first{
+@include border-rad(10)
+}
+.second{
+  @include border-rad(15)
+
+}
+.third{
+  @include border-rad(50)
+  
+}
+.forth{
+  @include border-rad(55)
 }

@@ -1,12 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+* {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
 body {
-  font-weight: 700;
-  background: rgb(51, 54, 50);
+  font-weight: 200;
+  background: rgb(194, 214, 188);
 }
 
 p {
   font-size: 1rem;
   letter-spacing: 0.1rem;
-  background: rgb(54, 58, 53);
+  background: rgb(226, 78, 59);
   color: rgb(194, 214, 188);
 }
 p a {
@@ -27,9 +37,14 @@ p a:active {
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  flex-direction: row;
   width: 80%;
   height: auto;
-  background-color: rgb(104, 230, 136);
+  background-color: none;
 }
 .container .container_para {
   background-color: #fff;
@@ -41,4 +56,36 @@ p a:active {
   border: 2px solid red;
   padding: 200px;
   font-size: 3rem;
+}
+
+.first {
+  border: 2px solid rgb(226, 78, 59);
+  border-radius: 10;
+  width: 100%;
+  border-radius: 10;
+  background-color: rgb(104, 106, 204);
+}
+
+.second {
+  border: 2px solid rgb(226, 78, 59);
+  border-radius: 15;
+  width: 75%;
+  border-radius: 15;
+  background-color: rgb(104, 230, 136);
+}
+
+.third {
+  border: 2px solid rgb(226, 78, 59);
+  border-radius: 50;
+  width: 100%;
+  border-radius: 50;
+  background-color: rgb(226, 78, 59);
+}
+
+.forth {
+  border: 2px solid rgb(226, 78, 59);
+  border-radius: 55;
+  width: 66%;
+  border-radius: 55;
+  background-color: rgb(194, 214, 188);
 }/*# sourceMappingURL=main.css.map */
